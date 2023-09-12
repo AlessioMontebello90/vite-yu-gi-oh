@@ -18,7 +18,7 @@ export default {
 #searchType {
   margin: 5px 0;
   width: 100px;
-  padding: 5px 8px;
+  padding: 8px;
   background-color: #fff;
   border: 1px solid #d4d3cf;
   border-radius: 5px;

@@ -1,21 +1,28 @@
 <script>
+import SingleCard from "./SingleCard.vue";
 export default {
   name: "ListCard",
+  components: {
+    SingleCard,
+  },
 };
 </script>
 
 <template>
-  <header>
-    <div class="container"></div>
-  </header>
+  <div class="container_cards">
+    <SingleCard />
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .container {
   background-color: #fff;
 }
-// DEBUG
-.container {
-  min-height: 5px 0;
+
+.container_cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 </style>
