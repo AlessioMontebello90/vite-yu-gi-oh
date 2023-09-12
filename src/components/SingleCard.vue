@@ -8,8 +8,8 @@ export default {
   <div class="card">
     <img src="UlrCardditizio" alt="Card di Alessio" />
     <div class="text_card">
-      <h3>name Alessio</h3>
-      Type
+      <h3>"Alessio"</h3>
+      Monster
     </div>
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
 @use "./../styles/partials/variables" as *;
 .card {
   background-color: $primaryColor;
+  width: calc((100% / 5) - 12px);
   img {
     width: 100%;
   }

@@ -29,11 +29,11 @@ export default {
 @use "./styles/generals.scss" as *;
 @use "./styles/partials/variables.scss" as *;
 main {
-  width: 70%;
+  width: 80%;
   margin: 5px auto;
   #container {
     margin: 5px 0;
-    padding: 25px;
+    padding: 50px;
     background-color: #fff;
     // debug
     min-height: 500px;

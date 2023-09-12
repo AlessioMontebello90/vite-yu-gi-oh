@@ -11,6 +11,15 @@ export default {
 <template>
   <div class="container_cards">
     <SingleCard />
+    <SingleCard />
+    <SingleCard />
+    <SingleCard />
+    <SingleCard />
+    <SingleCard />
+    <SingleCard />
+    <SingleCard />
+    <SingleCard />
+    <SingleCard />
   </div>
 </template>
 
@@ -22,7 +31,7 @@ export default {
 .container_cards {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 </style>
