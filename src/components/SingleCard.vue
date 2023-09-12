@@ -1,15 +1,27 @@
 <script>
 export default {
   name: "SingleCard",
+  props: {
+    details: Object,
+  },
 };
 </script>
 
 <template>
+  <!-- SingleBox Immage -->
   <div class="card">
-    <img src="UlrCardditizio" alt="Card di Alessio" />
+    <!-- v-for per singolo oggetto  card_images -->
+    <img
+      v-for="img in details.card_images"
+      :src="img.image_url"
+      alt="Card di Alessio "
+    />
+
+    <!-- name and type -->
+
     <div class="text_card">
-      <h3>"Alessio"</h3>
-      Monster
+      <h3>{{ details.name }}</h3>
+      {{ details.archetype }}
     </div>
   </div>
 </template>
