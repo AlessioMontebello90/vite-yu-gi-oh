@@ -1,16 +1,26 @@
 <script>
+import { store } from "./../store.js";
 export default {
   name: "AppSearch",
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <section>
-    <select name="archetype" id="searchType">
-      <option value="Alien">Alien</option>
-      <option value="Alien">Dragons</option>
-      <option value="Alien">Monster</option>
-    </select>
+    <form>
+      <select name="archetype" id="searchType" v-model.trim="store.searchType">
+        <option value="Alien">Alien</option>
+        <option value="Alligator">Alligator</option>
+        <option value="Barbaros">Barbaros</option>
+      </select>
+
+      <button type="submit" @click.prevent="$emit('searchType')">cerca</button>
+    </form>
   </section>
 </template>
 

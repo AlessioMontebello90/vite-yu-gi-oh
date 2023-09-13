@@ -21,11 +21,11 @@ export default {
   // methods
   methods: {
     getCards() {
+      console.log("fatto");
       axios
         .get(store.apiUrlCard)
         .then((ref) => {
           store.cardList = ref.data.data;
-          console.log(store.cardList);
         })
         .catch((err) => {
           console.log(err);
@@ -46,9 +46,11 @@ export default {
     urlLogo="https://static.wikia.nocookie.net/logopedia/images/3/35/Yu-Gi-Oh%21_Logo.png"
   />
   <main>
-    <AppSearch />
+    <AppSearch @searchType="getCards" />
     <div id="container">
-      <div id="banner_found_cards"><span>Select your cards</span></div>
+      <div id="banner_found_cards">
+        Found <span>{{ store.cardList.length }}</span> cards
+      </div>
       <ListCard />
     </div>
   </main>
