@@ -14,9 +14,12 @@ export default {
   <section>
     <form>
       <select name="archetype" id="searchType" v-model.trim="store.searchType">
-        <option value="Alien">Alien</option>
-        <option value="Alligator">Alligator</option>
-        <option value="Barbaros">Barbaros</option>
+        <option
+          v-for="archetype in store.arrayOfType"
+          :value="archetype.archetype_name"
+        >
+          {{ archetype.archetype_name }}
+        </option>
       </select>
 
       <button type="submit" @click.prevent="$emit('searchType')">cerca</button>

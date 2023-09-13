@@ -4,7 +4,6 @@ import { store } from "./store.js";
 import AppHeader from "./components/AppHeader.vue";
 import ListCard from "./components/ListCard.vue";
 import AppSearch from "./components/AppSearch.vue";
-
 // export file
 export default {
   components: {
@@ -37,15 +36,26 @@ export default {
           console.log(err);
         });
     },
+    createArrayOftype() {
+      axios
+        .get("https://db.ygoprodeck.com/api/v7/archetypes.php")
+        .then((res) => {
+          store.arrayOfType = res.data;
+          console.log(store.arrayOfType);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
   // created
   created() {
     this.getCards();
+    this.createArrayOftype();
   },
-  // close export
+  // close export defoult
 };
 </script>
-
 <template>
   <AppHeader
     message="Yu-Gi-Oh APi"
@@ -61,7 +71,6 @@ export default {
     </div>
   </main>
 </template>
-
 <style lang="scss">
 @use "./styles/generals.scss" as *;
 @use "./styles/partials/variables.scss" as *;
@@ -73,14 +82,13 @@ main {
     padding: 50px;
     background-color: #fff;
     // debug
-    // min-height: 500px;
+    min-height: 500px;
     #banner_found_cards {
-      background-color: #2d2e2f;
+      background-color: #212529;
       color: #fff;
       height: 50px;
       padding: 15px;
       font-weight: 600;
-      text-align: center;
     }
   }
 }
